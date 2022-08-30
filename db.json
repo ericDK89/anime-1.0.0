@@ -1,0 +1,82 @@
+{
+  "animes": [
+    {
+      "id": 0,
+      "name": "One Piece",
+      "description": "One Piece é uma série de mangá escrita e ilustrada por Eiichiro Oda. Os capítulos têm sido serializados na revista Weekly Shōnen Jump desde 22 de julho de 1997, com os capítulos compilados e publicados em 103 volumes tankōbon pela editora Shueisha até agosto de 2022.",
+      "image": "/one-piece-bg.jpg",
+      "type": "TV",
+      "status": "Ongoing",
+      "studios": "Toei Animation",
+      "duration": 24,
+      "genre": "Shonen",
+      "episodes": 1018,
+      "link": "one-piece"
+    },
+    {
+      "id": 1,
+      "name": "Naruto",
+      "description": "Naruto é uma série de mangá escrita e ilustrada por Masashi Kishimoto, que conta a história de Naruto Uzumaki, um jovem ninja que constantemente procura por reconhecimento e sonha em se tornar Hokage, o ninja líder de sua vila.",
+      "image": "/naruto-bg.jpeg",
+      "type": "TV",
+      "status": "Finished",
+      "studios": "Pierrot",
+      "duration": 24,
+      "genre": "Shonen",
+      "episodes": 500,
+      "link": "naruto"
+    },
+    {
+      "id": 2,
+      "name": "Boku no Hero",
+      "description": "Boku no Hero Academia, também conhecido como My Hero Academia no ocidente, é uma série de mangá escrita e ilustrada por Kōhei Horikoshi.",
+      "image": "/boku-no-hero-bg.webp",
+      "type": "TV",
+      "status": "Ongoing",
+      "studios": "Bones",
+      "duration": 24,
+      "genre": "Shonen",
+      "episodes": 113,
+      "link": "boku-no-hero"
+    },
+    {
+      "id": 3,
+      "name": "Haikyu!!",
+      "description": "Haikyū!! é uma série de manga escrita e ilustrada por Haruichi Furudate. Os capítulos individuais são publicados na revista Weekly Shōnen Jump desde fevereiro de 2012, com os volumes tankōbon sendo publicados pela editora Shueisha. ",
+      "image": "/haikyuu-bg.jpeg",
+      "type": "TV",
+      "status": "Ongoing",
+      "studios": "Production I.G",
+      "duration": 24,
+      "genre": "Esporte",
+      "episodes": 25,
+      "link": "haikyu"
+    },
+    {
+      "id": 4,
+      "name": "Kimetsu no Yaiba",
+      "description": "Kimetsu no Yaiba, também conhecido pelo título em língua inglesa Demon Slayer é uma série japonesa de mangá shōnen escrita e ilustrada por Koyoharu Gotōge.",
+      "image": "/kimetsu-no-yaiba-bg.jpeg",
+      "type": "TV",
+      "status": "Ongoing",
+      "studios": "Ufotable",
+      "duration": 24,
+      "genre": "shonen",
+      "episodes": 44,
+      "link": "kimetsu-no-yaiba"
+    },
+    {
+      "id": 5,
+      "name": "Hunter x Hunter",
+      "description": "Hunter × Hunter é uma série de mangá escrita e ilustrada por Yoshihiro Togashi. Os capítulos são serializados na revista Weekly Shōnen Jump desde 3 de março de 1998, onde são compilados e publicados em formato tankobon pela editora Shueisha, embora o mangá tenha frequentemente entrado em hiato desde 2006.",
+      "image": "/hunter-x-hunter-bg.jpeg",
+      "type": "TV",
+      "status": "Ongoing?",
+      "studios": "Nippon Animation",
+      "duration": 24,
+      "genre": "shonen",
+      "episodes": 148,
+      "link": "hunter-x-hunter"
+    }
+  ]
+}

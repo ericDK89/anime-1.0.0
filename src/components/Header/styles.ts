@@ -28,7 +28,7 @@ export const HeaderContent = styled.div`
       font-size: 1.125rem;
       line-height: 2rem;
 
-      color: ${props => props.theme["blue-500"]};
+      color: ${props => props.theme["blue-300"]};
 
       &:hover {
         transition: filter 0.2s;

@@ -1,25 +1,54 @@
+import { useState } from "react"
 import AnimeCard from "../../components/AnimeCard"
-import { HomeContainer } from "./styles"
+import useAnime from "../../hook/useAnime"
+import { AnimeCardGrid, Banner, HomeContainer } from "./styles"
 
 const Home = () => {
+  const [page, setPage] = useState(0)
+
+  const changePage = () => {
+    if (page === 5) {
+      return 
+    } else {
+      setPage(page + 1)
+    }
+  }
+
+  const changePage1 = () => {
+    if (page === 0) {
+      return
+    } else {
+      setPage(page - 1)
+    }
+  }
+
+  const { animes } = useAnime()
+
   return (
     <HomeContainer>
       <h2>Explore</h2>
       <span>O que você vai assistir hoje?</span>
 
-      <article>
-        <h3>One Piece</h3>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting 
-          industry. Lorem Ipsum has been the industry's standard dummy text 
-          ever since the 1500s, when an unknown printer took a galley of type 
-          and scrambled it to make a type specimen book. It has survived not 
-          only five centuries, but also the leap into electronic typesetting, 
-          remaining essentially unchanged.
-        </p>
-      </article>
+      <Banner
+        style={{ 
+          backgroundImage: `url(${animes[page]?.image})`, 
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <div key={animes[page]?.id}>
+          <h3>{animes[page]?.name}</h3>
+          <p>{animes[page]?.description}</p>
+        </div>
+      </Banner>
 
-      <AnimeCard />
+      <h3>Lançamentos</h3>
+      <button type="button" onClick={changePage}>{page} {"==>"}</button>
+      <button type="button" onClick={changePage1}>{page} {"<=="}</button>
+      
+      <AnimeCardGrid>
+        <AnimeCard />
+      </AnimeCardGrid>
     </HomeContainer>
   )
 }

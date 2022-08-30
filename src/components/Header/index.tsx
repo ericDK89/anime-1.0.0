@@ -10,7 +10,7 @@ const Header = () => {
 
         <nav>
           <Link to="/">Início</Link>
-          <Link to="/">Lista de anime</Link>
+          <Link to="/">Lista de animes</Link>
         </nav>
       </HeaderContent>
 
