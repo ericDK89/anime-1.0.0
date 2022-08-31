@@ -21,7 +21,7 @@ const Header = () => {
 
         <nav>
           <Link to="/">Início</Link>
-          <Link to="/">Lista de animes</Link>
+          {/* <Link to="/">Lista de animes</Link> */}
         </nav>
       </HeaderContent>
 
