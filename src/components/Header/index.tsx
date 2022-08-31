@@ -1,8 +1,19 @@
-import { MagnifyingGlass } from "phosphor-react"
-import { Link } from "react-router-dom"
-import { HeaderContainer, HeaderContent, Label } from "./styles"
+import { MagnifyingGlass } from "phosphor-react";
+import { FormEvent, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { HeaderContainer, HeaderContent, Label } from "./styles";
 
 const Header = () => {
+  const [searchAnime, setSearchAnime] = useState("")
+
+  const navigate = useNavigate()
+
+  const handleSearchAnime = (e: FormEvent) => {
+    e.preventDefault()
+    navigate(`one-piece/${searchAnime}`)
+    setSearchAnime("")
+  }
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -14,14 +25,19 @@ const Header = () => {
         </nav>
       </HeaderContent>
 
-      <Label htmlFor="search">
-        <input
-          id="search"
-          type="text"
-          placeholder="Pesquise no site"
-        />
-        <MagnifyingGlass size={24} />
-      </Label>
+      <form onSubmit={handleSearchAnime}>
+        <Label htmlFor="search">
+          <input
+            id="search"
+            type="text"
+            placeholder="Pesquise no site"
+            value={searchAnime}
+            required
+            onChange={e => setSearchAnime(e.target.value)}
+          />
+          <MagnifyingGlass size={24} />
+        </Label>
+      </form>
     </HeaderContainer>
   )
 }

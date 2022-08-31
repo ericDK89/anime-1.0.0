@@ -12,7 +12,8 @@ interface IAnime {
   studios: string,
   type: string,
   link: string,
-  description: string
+  description: string,
+  videoId: string
 }
 
 interface AnimeContextProps {

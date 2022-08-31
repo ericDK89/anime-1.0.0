@@ -11,7 +11,9 @@
       "duration": 24,
       "genre": "Shonen",
       "episodes": 1018,
-      "link": "one-piece"
+      "link": "one-piece",
+      "coverImg": "/one-piece-cover.jpeg",
+      "videoId": "IHhNTt3oxtY"
     },
     {
       "id": 1,
@@ -24,7 +26,8 @@
       "duration": 24,
       "genre": "Shonen",
       "episodes": 500,
-      "link": "naruto"
+      "link": "naruto",
+      "videoId": "SHTXpNfK2R8"
     },
     {
       "id": 2,
@@ -37,7 +40,8 @@
       "duration": 24,
       "genre": "Shonen",
       "episodes": 113,
-      "link": "boku-no-hero"
+      "link": "boku-no-hero",
+      "videoId": "L1FdEBTJXus"
     },
     {
       "id": 3,
@@ -50,7 +54,8 @@
       "duration": 24,
       "genre": "Esporte",
       "episodes": 25,
-      "link": "haikyu"
+      "link": "haikyu",
+      "videoId": "RMtJPqAExtw"
     },
     {
       "id": 4,
@@ -63,7 +68,8 @@
       "duration": 24,
       "genre": "shonen",
       "episodes": 44,
-      "link": "kimetsu-no-yaiba"
+      "link": "kimetsu-no-yaiba",
+      "videoId": "XjvaJH8aRc0"
     },
     {
       "id": 5,
@@ -76,7 +82,8 @@
       "duration": 24,
       "genre": "shonen",
       "episodes": 148,
-      "link": "hunter-x-hunter"
+      "link": "hunter-x-hunter",
+      "videoId": "qibSkLoSVAAxtY"
     }
   ]
 }

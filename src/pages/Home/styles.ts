@@ -25,17 +25,17 @@ export const HomeContainer = styled.div`
 
 export const Banner = styled.article`
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  align-items: flex-end;
+  justify-content: space-between;
 
   width: 100%;
   height: 25rem;
   margin-bottom: 2.5rem;
-  padding: 3rem 2.5rem;
+  padding: 3rem 2rem 1rem;
 
   border-radius: 12px;
 
-  background-image: url("../../../public/one-piece-bg.jpeg");
+  /* background-size: 100% 25rem; */
   background-size: cover;
 
   div {
@@ -56,6 +56,32 @@ export const Banner = styled.article`
 
   p {
     text-align: justify;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  button {
+    border: none;
+    border-radius: 9999px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    line-height: 0;
+
+    color: ${props => props.theme["white-300"]};
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:hover {
+      transition: filter 0.2s;
+      filter: brightness(0.7);
+    }
   }
 `
 
