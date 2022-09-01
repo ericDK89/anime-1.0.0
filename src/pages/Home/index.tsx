@@ -1,28 +1,10 @@
-import { CaretCircleLeft, CaretCircleRight } from "phosphor-react"
-import { useState } from "react"
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Link } from "react-router-dom"
 import AnimeCard from "../../components/AnimeCard"
 import useAnime from "../../hook/useAnime"
-import { AnimeCardGrid, Banner, HomeContainer } from "./styles"
+import { AnimeCardGrid, Banner, Description, HomeContainer } from "./styles"
 
 const Home = () => {
-  const [page, setPage] = useState(0)
-
-  const goForward = () => {
-    if (page === 5) {
-      return 
-    } else {
-      setPage(page + 1)
-    }
-  }
-
-  const goBack = () => {
-    if (page === 0) {
-      return
-    } else {
-      setPage(page - 1)
-    }
-  }
-
   const { animes } = useAnime()
 
   return (
@@ -30,25 +12,30 @@ const Home = () => {
       <h2>Explore</h2>
       <span>O que você vai assistir hoje?</span>
 
-      <Banner
-        style={{ 
-          backgroundImage: `url(${animes[page]?.image})`
-        }}
+      <Banner 
+        showArrows
+        showStatus={false} 
+        showThumbs={false}
+        infiniteLoop
+        autoPlay
+        stopOnHover
+        emulateTouch
+        
       >
-        <div key={animes[page]?.id}>
-          <h3>{animes[page]?.name}</h3>
-          <p>{animes[page]?.description}</p>
-        </div>
+        {animes.map(anime => {
+          return (
+            <Link key={anime?.id} to={`/${anime.link}/${anime.id}`}>
+              <div >
+                <img src={anime.coverImg} alt={anime.name} />
 
-        <footer>
-          <button type="button" onClick={goBack}>
-            <CaretCircleLeft size={32} weight="fill" />
-          </button>
-
-          <button type="button" onClick={goForward}>
-            <CaretCircleRight size={32} weight="fill" />
-          </button>
-        </footer>
+                <Description>
+                  <h3>{anime.name}</h3>
+                  <p>{anime.description}</p>
+                </Description>
+              </div>
+            </Link>
+          )
+        })}
       </Banner>
 
       <h3>Lançamentos</h3>

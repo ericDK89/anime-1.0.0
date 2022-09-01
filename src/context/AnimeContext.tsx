@@ -13,7 +13,8 @@ interface IAnime {
   type: string,
   link: string,
   description: string,
-  videoId: string
+  videoId: string,
+  coverImg: string
 }
 
 interface AnimeContextProps {
@@ -29,7 +30,7 @@ export const AnimeContext = createContext({} as AnimeContextProps)
 const AnimeContextProvider = ({ children }: Props) => {
   const [animes, setAnimes] = useState<IAnime []>([])
 
-  const getAnimes = async () => {
+  const getAnimes = async (query?: string) => {
     const res = await axios.get("http://localhost:3333/animes")
     const { data } = res
     setAnimes(data)
@@ -43,7 +44,7 @@ const AnimeContextProvider = ({ children }: Props) => {
     <AnimeContext.Provider value={{ animes }}>
       {children}
     </AnimeContext.Provider>
-  )
+  ) 
 }
 
 export default AnimeContextProvider
