@@ -5,12 +5,14 @@ import useAnime from "../../hook/useAnime"
 import { AnimeCardGrid, Banner, Description, HomeContainer } from "./styles"
 
 const Home = () => {
-  const { animes } = useAnime()
+  const { animes, isLoading } = useAnime()
 
   return (
     <HomeContainer>
       <h2>Explore</h2>
       <span>O que você vai assistir hoje?</span>
+
+      {isLoading ? <span>Carregando...</span> : 
 
       <Banner 
         showArrows
@@ -20,7 +22,6 @@ const Home = () => {
         autoPlay
         stopOnHover
         emulateTouch
-        
       >
         {animes.map(anime => {
           return (
@@ -37,7 +38,7 @@ const Home = () => {
           )
         })}
       </Banner>
-
+      }
       <h3>Lançamentos</h3>
 
       <AnimeCardGrid>

@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
@@ -18,7 +19,8 @@ interface IAnime {
 }
 
 interface AnimeContextProps {
-  animes: IAnime[]
+  animes: IAnime[],
+  isLoading: boolean
 }
 
 interface Props {
@@ -30,18 +32,29 @@ export const AnimeContext = createContext({} as AnimeContextProps)
 const AnimeContextProvider = ({ children }: Props) => {
   const [animes, setAnimes] = useState<IAnime []>([])
 
-  const getAnimes = async (query?: string) => {
-    const res = await axios.get("http://localhost:3333/animes")
-    const { data } = res
-    setAnimes(data)
-  }
+  const { data, isLoading } = useQuery(["animes"], async () => {
+    const res = await axios("http://localhost:3333/animes")
+    const animeData = res.data
+
+    return animeData
+  })
+
+  // const getAnimes = async () => {
+  //   const res = await axios.get("http://localhost:3333/animes")
+  //   const { data } = res
+  //   setAnimes(data)
+  // }
 
   useEffect(() => {
-    getAnimes()
-  }, [])
+    if (data) {
+      setAnimes(data)
+    } else {
+      return
+    }
+  }, [data])
 
   return (
-    <AnimeContext.Provider value={{ animes }}>
+    <AnimeContext.Provider value={{ animes, isLoading }}>
       {children}
     </AnimeContext.Provider>
   ) 
